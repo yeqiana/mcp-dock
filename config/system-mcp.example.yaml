@@ -1,0 +1,11 @@
+version: 1
+
+roots:
+  - id: workspace
+    name: 示例工作区
+    path: 'D:/workspace/your-workspace'
+
+limits:
+  maxScanEntries: 30000
+  maxDepth: 10
+  maxReadBytes: 65536

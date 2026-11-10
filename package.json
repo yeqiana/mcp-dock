@@ -1,0 +1,29 @@
+{
+  "name": "mcp-dock",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "npm@10.9.4",
+  "engines": {"node": ">=22.0.0"},
+  "workspaces": ["packages/*", "apps/*"],
+  "scripts": {
+    "build": "npm run build --workspace @mcp-dock/core && npm run build --workspace @mcp-dock/approval-core && npm run build --workspace @mcp-dock/local-dev-mcp && npm run build --workspace @mcp-dock/system-mcp && npm run build --workspace @mcp-dock/approval-cli",
+    "typecheck": "npm run build --workspace @mcp-dock/core && npm run typecheck --workspace @mcp-dock/approval-core && npm run build --workspace @mcp-dock/approval-core && npm run typecheck --workspace @mcp-dock/local-dev-mcp && npm run build --workspace @mcp-dock/system-mcp && npm run typecheck --workspace @mcp-dock/system-mcp && npm run typecheck --workspace @mcp-dock/approval-cli",
+    "test": "npm run build && npm run security:scan && node --test",
+    "dev:local-dev": "npm run dev --workspace @mcp-dock/local-dev-mcp",
+    "start:local-dev": "npm run start --workspace @mcp-dock/local-dev-mcp",
+    "dev:system-mcp": "npm run dev --workspace @mcp-dock/system-mcp",
+    "start:system-mcp": "npm run start --workspace @mcp-dock/system-mcp",
+    "approval": "node apps/approval-cli/dist/index.js",
+    "smoke:mcp": "node node_modules/tsx/dist/cli.mjs scripts/smoke-mcp.ts",
+    "smoke:system-mcp": "node node_modules/tsx/dist/cli.mjs scripts/smoke-system-mcp.ts",
+    "smoke:all": "npm run smoke:mcp && npm run smoke:system-mcp",
+    "security:scan": "node scripts/security-scan.mjs"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/client": "2.4.0",
+    "@types/node": "^22.0.0",
+    "tsx": "4.23.15",
+    "typescript": "7.0.2"
+  }
+}

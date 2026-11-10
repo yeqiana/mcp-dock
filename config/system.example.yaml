@@ -1,0 +1,8 @@
+version: 1
+
+runner:
+  serverUrl: 'http://127.0.0.1:9058'
+  healthPath: '/healthz'
+  logsDir: 'C:/path/to/webcodex-service/logs'
+  serverProcessName: 'webcodex-server.exe'
+  runnerProcessName: 'webcodex-runner.exe'

@@ -1,0 +1,12 @@
+version: 1
+
+projects:
+  - id: sample-service
+    name: 示例业务服务
+    root: 'D:/workspace/your-workspace/sample-service'
+    description: 示例项目目录
+
+  - id: mcp-dock
+    name: MCP Dock
+    root: 'D:/workspace/your-workspace/mcp-dock'
+    description: 个人本地 MCP 开发工作台
